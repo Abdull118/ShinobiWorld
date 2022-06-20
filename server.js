@@ -1,8 +1,8 @@
 const express = require('express') //application will now have access to express
 const app = express() //using express and storing it into express. anywhere you see app, you will now know that we are using express
 const PORT = 8000
-const Characters ={
-    'Naruto':{ 
+const rappers ={
+    'naruto':{ 
     'Name': 'Naruto Uzumaki',
     'age': 17,
     'birthDate': 'October 10',
@@ -11,7 +11,7 @@ const Characters ={
     'Status': '7th Hokage'
 },
 
-    'Sasuke':{ 
+    'sasuke':{ 
     'Name': 'Sasuke Uchiha',
     'age': 17,
     'birthDate': 'July 23',
@@ -20,7 +20,7 @@ const Characters ={
     'Status': 'Shadow Hokage'
 },
 
-    'Sakura':{ 
+    'sakura':{ 
     'Name': 'Sakura Haruno',
     'age': 17,
     'birthDate': 'March 28',
@@ -47,13 +47,13 @@ app.get('/characters.html', (request, response)=>{ //Express uses 2 parameters, 
     response.sendFile(__dirname + '/characters.html') //Hey! We heard a GET request on the main path '/' we wanna send a responseand the type of response we wanna do is send you a file. dirname is just sayin that wherever the server.js file is located is where we will start looking for the requested file. 
 })
 
-app.get('/api/:characterName', (request, response)=>{//for an API we send a json file.
-    const charactersName = request.params.characterName.toLowerCase()//This will take the rapperName from the URL as a parameter and request it. toLowerCase removes case sensitivity. Request will then effectively request the parameter and store it into the assigned variable.
-    if(Characters[charactersName]){ //this is saying, is rappersName, which is inputted into the url and stored in the variable above, is rappersName present inside of the rappers object. If this is true do the following:
-       response.json(Characters[charactersName]) //respond with whatever information you have 
+app.get('/api/:rapperName', (request, response)=>{//for an API we send a json file.
+    const rappersName = request.params.rapperName.toLowerCase()//This will take the rapperName from the URL as a parameter and request it. toLowerCase removes case sensitivity. Request will then effectively request the parameter and store it into the assigned variable.
+    if(rappers[rappersName]){ //this is saying, is rappersName, which is inputted into the url and stored in the variable above, is rappersName present inside of the rappers object. If this is true do the following:
+       response.json(rappers[rappersName]) //respond with whatever information you have 
     }
     else{
-        response.json('Unavaible. Please try with Naruto, Sasuke, or Sakura for now.') //if rappersName does not exist inside of the rappers object, respond with the information of Dylan that stored within rappers.
+        response.json(rappers['Sakura']) //if rappersName does not exist inside of the rappers object, respond with the information of Dylan that stored within rappers.
     }
     // response.json(Rappers)
 })
