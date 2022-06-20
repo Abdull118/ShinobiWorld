@@ -1,0 +1,86 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header{
+  margin: 0;
+  background-image: url("../img/background.png");
+  background-color: orange;
+  height: 50px;
+}
+nav ul{
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  margin: 0;
+  padding-right: 150px;
+  align-items: center;
+  height: 50px;
+  color: white;
+  font-size: 20px;
+  
+                                                 
+}
+.Logo{
+  width: 30px;
+}
+
+body{
+    background-image: url('https://www.gifcen.com/wp-content/uploads/2022/03/naruto-gif-3.gif');
+    background-size: cover;
+    font-family: 'Ninja Naruto', sans-serif;
+}
+
+
+form{
+  display: flex;
+  align-items: center;
+  padding-left: 150px;
+  height: 750px;  
+}
+
+form > div{
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  padding-left: 620px;
+  align-items: flex-end;
+}
+
+input{
+  height: 60px;
+  border: 0px;
+  border-radius: 10%;
+}
+
+button{
+  color: white;
+  background-color: orange;
+  border: 0px;
+  height: 60px;
+  border-radius: 10%;
+}
+
+section{
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: white;
+  background-image: url("../img/background.png");
+  background-color: orange;
+  margin-bottom: 0;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
